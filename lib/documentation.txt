@@ -1,0 +1,109 @@
+= INSTALLATION =
+1. UnZip the archive in your computer/mobile or using an online ftp service.
+2. Upload all the data in a folder in your server
+3. If needed chmod `data` folder to 777
+4. Done
+-------------------
+= LOGIN =
+The default hostname is `localhost` if you want to change it click the change link next to it.
+If the connection fails an error message will be displayed.
+-------------------
+= WELCOME PAGE =
+If you see the welcome message the connection was successful.
+You can bookmark that page for auto login.
+-------------------
+= SQL/EXPORT/IMPORT LINKS =
+In the header area you will be able to view these links.
+- SQL if you access it from the WELCOME or DATABASE page, it will run the sql with NO database selected.
+You can chek if a database is selected by url if it contains ?db=[db name]
+Or if db name is present in the return path: Home » [db_name] »  Sql
+- EXPORT if you access it with no database selected it will display the list of databases available to the user. You can chek if a database is selected same as for SQL
+- IMPORT same execution rule as for SQL
+-------------------
+= DATABASES =
+It will list the databases the user has access to.
+If the user has the privileges it can also create/privileges database.
+You have an option to search by name.
+You can select all the listed items on the page by clicking the checkbox before With selected: if your browser supports javascript.
+You can also set the number of database to show per page.
+-------------------
+= SQL =
+It allows you to run your sql query in the same way as a console.
+if the query will return any result it will be displayed in a table.
+If you execute a single query similar `SELECT * FROM...` you will be able to export the returning data using a submit button available under the table.
+-------------------
+= EXPORT =
+It allows to export your database(s) or table(s).
+You can save the exported file as sql or as zip or you can view it as text inside a textarea.
+If you select sql or zip the file will be saved in data/ folder.
+You will receive a link to the file when it's done.
+If you exported to view it in a textarea you can also change and save it by the submit button under the textarea.
+-------------------
+= IMPORT =
+It allows you to upload sql/zip files to be executed.
+You can upload sql or zip files via url or HTTP.
+The file name/extension is ignored.
+If the file uploaded is a zip archive, the FIRST file(that corresponds to index 0) from the archive will be extracted, the archive deleted, the content of that FIRST file will be executed and if the checkbox for `save after execution` is marked it will save it to a new sql file.
+If the file is text it will execute the content and if the checkbox for `save after execution` is marked it will save it to a new sql file.
+The max upload size for HTTP upload is set by the server the script is hosted.
+-------------------
+= TABLES =
+It will list the tables available in the database.
+It will display in a list the name of the table size | number of rows.
+You have multiple options to execute with the selected table.
+You have an option to search by name.
+You can select all the listed items on the page by clicking the checkbox before With selected: if your browser supports javascript.
+You can select the number of tables to display per page.
+You can add a new table using the form at the end of the page.
+-------------------
+= STRUCTURE =
+When you click a table name you will see the structure page by default.
+You will be presented with the columns name and some basic info about it like type, lenght, default value...
+You can also add a new column and execute some operations that will affect the table like Rename/Copy/Sort table.
+In the footer of the page you will be able to view the defined keys for that specific table. You also have the option to delete a key.
+On the With selected menu you can drop(delete) the selected columns and set them as keys.
+-------------------
+= COULUMN =
+When you click a column from the structure page you will see a page that will provide more details about that column and some extra options like Edit/Drop/Browse column.
+-------------------
+= BROWSE =
+This page allows you to view tha actual data inserted in that table.
+You can select what column to view and also have the option to filter that column by it's name.
+You can sort the results ASC or DESC by the current column.
+With selected menu allows you to Drop or export the select records.
+You can select how many recors to view on page with the Show option.
+On the footer of the page you can view the total number of records available for the query.
+-------------------
+= RECORD VIEW =
+On this page you can view the specific data of a record for all columns.
+You can also Edit/Delete a record from here.
+-------------------
+= SEARCH TABLE =
+This page helps you build a query witch will be executed on the browse page. The query data will be stored in a session variable `$_SESSION['search']`
+This will be active on the browse page only if in the url the `search2` value is set. 
+To lose that when you are on the browse page click the Browse in the top bar(before structure) or click the `exit search module` link available.
+You can also change the column to be displayed and you will keep the search query active.
+But if you want to filter a cetain column the session query will be ignored.
+-------------------
+= INSERT =
+This will allow you to insert data inside the table.
+You will see a table witch contain the column name it's type and an input/textarea/select menu to enter your data.
+The default value of a column(if any) will also be displayed as a preset value.
+-------------------
+= EMPTY =
+This page will allow you to TRUNCATE (DELETE) ALL DATA INSERTED IN THE TABLE.
+THIS ACTION IS NOT REVERSEBLE.
+-------------------
+= DROP =
+This option will delete the table including it's structure and data.
+THIS ACTION IS NOT REVERSEBLE.
+-------------------
+= ABOUT TEMPLATES =
+It's now easy to customise this app. You don't like the way links are displayed ? change them by editing the tpl file from the template folder.
+if you make a template fell free to send a copy at ionutvmi@gmail.com
+If it's nice it will be posted on the project page.
+Any contribution is well received.
+-------------------
+= QUESTIONS =
+Still have questions ? You can always email me at: ionutvmi@gmail.com
+
